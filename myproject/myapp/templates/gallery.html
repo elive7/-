@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="{% url 'home' %}">Park Subin</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a  href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'place' %}">Place</a></li>
+          <li><a href="{% url 'hobby' %}">Hobby</a></li>
+          <li><a href="{% url 'music' %}">Music</a></li>
+          <li><a class="active" href="{% url 'gallery' %}">Gallery</a></li>
+         
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Gallery</h2>
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>Gallery</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+      <!-- ======= Members Section ======= -->
+      <section id="members" class="members">
+        <div class="container">
+  
+          <div class="row">
+  
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+              <div class="member">
+                <div class="member-img">
+                  <img src="{% static '/img/gallery1.jpg'%}" class="img-fluid" alt="">
+                
+                </div>
+                <div class="member-info">
+                  <h4>올해 초 부산 여행에서 만난 호랑이</h4>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+              <div class="member">
+                <div class="member-img">
+                  <img src="{% static '/img/gallery6.jpg'%}" class="img-fluid" alt="">
+                
+                </div>
+                <div class="member-info">
+                  <h4>어딘가에서 본 예쁜 대문</h4>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+              <div class="member">
+                <div class="member-img">
+                  <img src="{% static '/img/gallery7.jpg'%}" class="img-fluid" alt="">
+                
+                </div>
+                <div class="member-info">
+                  <h4>올해 소원을 빌었던 돌탑</h4>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- End Members Section -->
+
+  </main><!-- End #main -->
+  {% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="{% url 'home' %}">Park Subin</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a  href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'place' %}">Place</a></li>
+          <li><a class="active" href="{% url 'hobby' %}">Hobby</a></li>
+          <li><a href="{% url 'music' %}">Music</a></li>
+          <li><a href="{% url 'gallery' %}">Gallery</a></li>
+         
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Hobby</h2>
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>Hobby</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+
+    <!-- ======= Members Section ======= -->
+    <section id="members" class="members">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="{% static '/img/hobby1.jpg'%}" class="img-fluid" alt="">
+              
+              </div>
+              <div class="member-info">
+                <h4>음악 듣기</h4>
+                <span>노래 하나에 꽂히면 그것만 들음</span>
+                <p>발라드보다는 신나는 청량한 노래를 듣는 것을 좋아합니다. 자주 친구들에게 노래 추천을 받아 듣습니다. 한 노래가 마음에 들면 진짜 질릴 때까지 그 노래만 듣습니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="{% static '/img/hobby3.jpg'%}" class="img-fluid" alt="" width="600px">
+               
+              </div>
+              <div class="member-info">
+                <h4>유투브 보기</h4>
+                <span>한번 보면 2시간은 기본</span>
+                <p>취미라고 하기는 좀 그럴지도 모르지만, 요즘 제가 시간을 가장 많이 보내는 곳 중 하나가 바로 유튜브입니다. 관련동영상을 타고타고 들어가면 진짜,,, 끝이 없습니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="{% static '/img/hobby2.jpg'%}" class="img-fluid" alt="">
+                
+              </div>
+              <div class="member-info">
+                <h4>넷플릭스 찾아보기</h4>
+                <span>방학 떄 최고로 하고 싶었던 것들 중 하나</span>
+                <p>종강을 했을 때 가장 먼저 하고 싶었던 것 중 하나가 바로 넷플릭스 보기였습니다. 방학동안 알차게 넷플릭스를 둘러보면서 많은 작품을 보고 제 인생작을 찾고 싶습니다!</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Members Section -->
+
+  </main><!-- End #main -->
+
+  
+  {% endblock %}

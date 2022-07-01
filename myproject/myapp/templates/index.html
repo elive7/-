@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="{% url 'home' %}">Park Subin</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="active" href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'place' %}">Place</a></li>
+          <li><a href="{% url 'hobby' %}">Hobby</a></li>
+          <li><a href="{% url 'music' %}">Music</a></li>
+          <li><a href="{% url 'gallery' %}">Gallery</a></li>
+         
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+
+  <main id="main">
+
+    <!-- ======= My & Family Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Park Subin</h2>
+          <p>안녕하세요 박수빈입니다. 제 자기소개페이지에 들어와주셔서 감사합니다!</p>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <img src="{% static '/img/about11.jpg' %}" class="img-fluid" alt="" width="600">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" id ="introtext" >
+            <p>
+              <br>  
+              성신여대 컴퓨터공학과 21학번 박수빈입니다. 또한 멋사 10기 아기사자로 열심히 코딩을 배워나가고 있습니다!
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> 성신여대 컴퓨터공학과 21학번</li>
+              <li><i class="ri-check-double-line"></i> 멋쟁이 사자처럼 10기</li>
+              <li><i class="ri-check-double-line"></i> 멋사를 통해 백엔드 잘알이 되는 것이 목표</li>
+            </ul>
+            <p>
+              아직 코딩에 대해 모르는게 더 많지만, 열심히 배워나가서 멋진 개발자가 되고 싶습니다!  </p>
+              <p>
+                 여기서 저의 취미, 제가 찍은 사진, 좋아하는 음악, 장소 등등을 찾아보실 수 있습니다 (●'◡'●)
+            </p>
+            <!-- <a href="our-story.html" class="btn-learn-more">Learn More</a> -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-xl-7">
+          
+          <!-- <div class="card-header py-3">
+            
+          </div> -->
+          <div class="card-body">
+              <div class="table-responsive">
+             
+                  <h5>댓글</h5>
+              <form method="post" action="{% url 'create' %}">
+                   {%csrf_token%}
+                      <div class="form-group">
+                          <input type="comment" name="comment" class="form-control form-control-user" id="exampleInputEmail"
+                              placeholder="하고 싶은 말을 자유롭게 적어주세요." >
+                      </div>
+                      </br>
+                    
+ 
+                      <button type= "submit" class="btn btn-primary btn-icon-split" >
+                          <span class="icon text-white-50">
+                              <i class="fas fa-check"></i>
+                          </span>
+                          <span class="text">Submit</span>
+                          
+                      </button>
+              </form>
+              <table class="table table-dark" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr class = 'table-dark'>
+                        <th width="70%">댓글</th>
+                        <th width="30%">작성시각</th>
+                        
+                    </tr>
+                </thead>
+              </br>
+            </br>
+                <tbody>
+                    {% for comment in comment %}
+                    <tr class="table-light">
+                        <td>{{ comment.comment }}</td>
+                      <td>{{ comment.date }}</td>
+                        <td>
+                            <a href="{% url 'delete' comment.id %}" class="btn btn-primary btn-circle btn-sm">
+                              <span class="text">DELETE</span>
+                            </a>
+                            
+                        </td>
+                        <td>
+                            <a href="{% url 'update' comment.id %}" class="btn btn-primary btn-icon-split btn-sm">
+                            <span class="text">UPDATE</span>
+                        </a> 
+                        </td>                
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+              </div>
+
+      </div>
+
+      </div>
+  </div>
+
+  </main><!-- End #main -->
+
+  {% endblock %}

@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+
+   <!-- ======= Header ======= -->
+   <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="{% url 'home' %}">Park Subin</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a  href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'place' %}">Place</a></li>
+          <li><a href="{% url 'hobby' %}">Hobby</a></li>
+          <li><a class="active" href="{% url 'music' %}">Music</a></li>
+          <li><a  href="{% url 'gallery' %}">Gallery</a></li>
+         
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Music</h2>
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>Music</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Event List Section ======= -->
+    <section id="event-list" class="event-list">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6 d-flex align-items-stretch">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static '/img/music11.jpg'%}" width= "400px" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">한페이지가 될 수 있게</h5>
+                <p class="fst-italic text-center">데이식스</p>
+                <p class="card-text">고3떄 친구와 입시가 끝나면 노래방에서 같이 부르기로 했던 노래인데 코로나 떄문에 못 부르다가 최근에야 부르게 되었습니다. 희망찬 가사로 힘을 얻고 싶을 떄 추천!</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-stretch">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static '/img/music22.jpg'%}" width= "400px"  alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">안녕</h5>
+                <p class="fst-italic text-center">조이</p>
+                <p class="card-text">신나는 멜로디와 희망한 가사 떄문에 자주 들었던 노래입니다. 힘든 일이 있을 때 이 노래를 들으면 힘든 일도 다 이겨낼 수 있을 것 같은 자신감을 줍니다</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 d-flex align-items-stretch">
+            <div class="card">
+              <div class="card-img">
+                <img src="{% static '/img/music33.jpg'%}"  width= "400px" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Lover</h5>
+                <p class="fst-italic text-center">Taylor Swift </p>
+                <p class="card-text">테일러 스위프트의 사랑에 빠진 모습을 느낄 수 있는 그런 곡입니다. 부드러운 노래에 맞춰 내 마음도 몽글몽글해지는 그런 느낌을 받을 수 있습니다.</p>
+              </div>
+            </div>
+          </div>
+        <div class="col-md-6 d-flex align-items-stretch">
+          <div class="card">
+            <div class="card-img">
+              <img src="{% static '/img/music44.jpg'%}"  width= "400px" alt="...">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Back to you</h5>
+              <p class="fst-italic text-center">Eldon</p>
+              <p class="card-text">예전에 한번 꽂혔던 노래로 코딩할 때, 반복재생으로 계속 틀어놓곤 했던 노래입니다. 청량한 노래들을 들으며 코딩을 했던 기억들을 떠오르게 해주는 노래입니다.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+     
+
+      </div>
+    </section><!-- End Event List Section -->
+
+  </main><!-- End #main -->
+
+  {% endblock %}
